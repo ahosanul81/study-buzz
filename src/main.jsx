@@ -9,11 +9,33 @@ import {
 } from "react-router-dom";
 import Layout from './Layout/Layout';
 import GroupStudyProvider from './Context/GroupStudyProvider';
+import Home from './Pages/Home/Home';
+import Assignments from './Pages/Assignments';
+import CreateAssignments from './Pages/CreateAssignments';
+import PendingAssignments from './Pages/PendingAssignments';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/assignments",
+        element: <Assignments></Assignments>,
+      },
+      {
+        path: "/create_assignments",
+        element: <CreateAssignments></CreateAssignments>,
+      },
+      {
+        path: "/pending_assignments",
+        element: <PendingAssignments></PendingAssignments>,
+      },
+    ]
   },
 ]);
 
