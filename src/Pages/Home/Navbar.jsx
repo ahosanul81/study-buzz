@@ -29,6 +29,8 @@ const Navbar = () => {
         <li><NavLink to='/pending_assignments'>Pending assignments</NavLink></li>
     </>
 
+
+
     return (
         <div className="container mx-auto mb-6 navbar bg-base-100">
             <div className="navbar-start">
