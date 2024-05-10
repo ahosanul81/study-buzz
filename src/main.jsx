@@ -13,6 +13,8 @@ import Home from './Pages/Home/Home';
 import Assignments from './Pages/Assignments';
 import CreateAssignments from './Pages/CreateAssignments';
 import PendingAssignments from './Pages/PendingAssignments';
+import Login from './Pages/Home/Login';
+import SignUp from './Pages/SignUp';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/sign_up",
+        element: <SignUp></SignUp>,
       },
       {
         path: "/assignments",
