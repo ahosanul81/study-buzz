@@ -14,7 +14,6 @@ const CreateAssignments = () => {
         setDifficultyLevelOpen(false)
     }
 
-
     const handleCreateAssignment = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -35,6 +34,9 @@ const CreateAssignments = () => {
             })
     }
 
+
+
+    
     return (
         <div>
             <div>

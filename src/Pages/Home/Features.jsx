@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const Features = () => {
     const [features, setFeatures] = useState([])
-
-
+    
     useEffect(() => {
         axios(`${import.meta.env.VITE_API_KEY}/features`)
             .then(res => {
