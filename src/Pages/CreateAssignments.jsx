@@ -3,6 +3,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const CreateAssignments = () => {
     const [difficultyLevel, setDifficultyLevel] = useState([])
@@ -31,12 +32,19 @@ const CreateAssignments = () => {
         axios.post(`${import.meta.env.VITE_API_KEY}/assignments`, createdAssignment)
             .then(res => {
                 console.log(res.data);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1000
+                  });
             })
     }
 
 
 
-    
+
     return (
         <div>
             <div>
@@ -52,20 +60,22 @@ const CreateAssignments = () => {
                                     <label htmlFor="firstname" className="text-sm">Assignment Title</label>
                                     <input id="title" name='title' type="text" placeholder="Title" className="w-full p-2 border border-orange-300 rounded-md  text-gray-900" />
                                 </div>
-                                <div className="col-span-full sm:col-span-3 relative">
-                                    <label htmlFor="lastname" className="text-sm">Assignment difficulty level</label>
-                                    <input
-                                        readOnly
-                                        value={difficultyLevel}
-                                        id="difficultyLevel"
-                                        name='difficultyLevel'
-                                        type="text"
-                                        placeholder="level"
-                                        className="w-full p-2 border border-orange-300 rounded-md  text-gray-900"
-                                        onChange={(e) => handleDifficultyLevel(e.target.value)}
-                                    />
-                                    <div className="dropdown dropdown-left absolute right-3 bottom-2">
-                                        <div onClick={() => setDifficultyLevelOpen(true)} tabIndex={0} role="button" className="text-2xl"><MdKeyboardArrowDown></MdKeyboardArrowDown></div>
+                                {/* <div className="col-span-full sm:col-span-3 relative"> */}
+
+
+                                    <div className="dropdown dropdown-down  col-span-full sm:col-span-3 relative">
+                                        <label htmlFor="lastname" className="text-sm">Assignment difficulty level</label>
+                                        <input
+                                            readOnly
+                                            value={difficultyLevel}
+                                            id="difficultyLevel"
+                                            name='difficultyLevel'
+                                            type="text"
+                                            placeholder="level"
+                                            className="w-full p-2 border border-orange-300 rounded-md  text-gray-900"
+                                            onChange={(e) => handleDifficultyLevel(e.target.value)}
+                                        />
+                                        <div onClick={() => setDifficultyLevelOpen(true)} tabIndex={0} role="button" className="text-2xl absolute right-3 bottom-2"><MdKeyboardArrowDown></MdKeyboardArrowDown></div>
 
                                         {difficultyLevelOpen && <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                                             <li onClick={() => handleDifficultyLevel('hard')}><a>Hard</a></li>
@@ -75,7 +85,7 @@ const CreateAssignments = () => {
 
                                     </div>
 
-                                </div>
+                                {/* </div> */}
                                 <div className="col-span-full sm:col-span-3">
                                     <label className="text-sm">Marks</label>
                                     <input id="marks" name='marks' type="text" placeholder="Marks" className="w-full p-2 border border-orange-300 rounded-md  text-gray-900" />

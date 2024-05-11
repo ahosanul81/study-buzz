@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const { logOutUser, user } = useContext(GroupStudyContext)
-    console.log(user, 'navbar');
+    // console.log(user, 'navbar');
 
     const handleLogOut = () => {
         logOutUser()

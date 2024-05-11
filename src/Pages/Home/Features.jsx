@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const Features = () => {
     const [features, setFeatures] = useState([])
-    
+
     useEffect(() => {
         axios(`${import.meta.env.VITE_API_KEY}/features`)
             .then(res => {
@@ -19,7 +19,7 @@ const Features = () => {
             <div className='grid grid-cols-3 gap-3'>
 
                 {features.map(feature => <>
-                    <div className="card w-full bg-base-100 shadow-md image-full">
+                    <div key={feature._id} className="card w-full bg-base-100 shadow-md image-full">
                         <figure><img src={feature.imageUrl} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title text-3xl text-white font-bold">{feature.title}</h2>
