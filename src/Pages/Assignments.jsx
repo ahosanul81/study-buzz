@@ -31,16 +31,6 @@ const Assignments = () => {
             })
     }, [difficultyLevel])
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/assignments?difficultyLevel=${difficultyLevel}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //         })
-    // }, [difficultyLevel]);
-
-
-
 
     return (
         <div>
