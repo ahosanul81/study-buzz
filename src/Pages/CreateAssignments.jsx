@@ -42,9 +42,6 @@ const CreateAssignments = () => {
             })
     }
 
-
-
-
     return (
         <div>
             <div>

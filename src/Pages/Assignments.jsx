@@ -22,7 +22,6 @@ const Assignments = () => {
             })
     }, [])
 
-
     useEffect(() => {
         axiosSecure(`/assignments/difficulty_level?difficultyLevel=${difficultyLevel}`)
             .then(res => {
