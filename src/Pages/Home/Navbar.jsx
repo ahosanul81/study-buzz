@@ -13,7 +13,7 @@ const Navbar = () => {
                 Swal.fire({
                     position: "top-center",
                     icon: "success",
-                    title: "successfully  Logged out",
+                    title: "successfully  logged out",
                     showConfirmButton: false,
                     timer: 1000
                 });
@@ -24,9 +24,9 @@ const Navbar = () => {
     }
 
     const navLinks = <>
-        <li><NavLink to='/assignments'>Assignments</NavLink></li>
-        <li><NavLink to='/create_assignments'>Create assignments</NavLink></li>
-        <li><NavLink to='/pending_assignments'>Pending assignments</NavLink></li>
+        <li><NavLink to='/assignments' className=" lg:border lg:border-orange-400 ">Assignments</NavLink></li>
+        <li><NavLink to='/create_assignments' className="lg:border lg:border-orange-400 lg:mx-4">Create assignments</NavLink></li>
+        <li><NavLink to='/pending_assignments' className="lg:border lg:border-orange-400 ">Pending assignments</NavLink></li>
     </>
 
 
@@ -38,15 +38,20 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-[1rem]">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-40 p-2 shadow bg-base-100 rounded-box w-52 text-[1rem]" >
                         {navLinks}
                     </ul>
                 </div>
-                <div className='w-36 h-20  rounded-full'>
-                    <Link to="/">
-                        <img className='w-full h-full ' src="/public/Images/study buzz logo.png" alt="aaa" />
-                    </Link>
-                </div>
+                <Link to="/" className=''>
+                    <div className='w-20 h-10 lg:w-24 lg:h-12 ml-4 rounded-full flex flex-row lg:flex-col justify-center items-center'>
+
+                        <img className='w-full h-full ' src="https://i.ibb.co/3d2Br7z/study-buzz-logo-for-fav-Icon.png" alt="aaa" />
+                
+                            <h1 className='flex flex-row gap-1'><span className='font-bold'>Study</span> <span className='text-amber-600 font-bold'>Buzz</span></h1>
+                
+
+                    </div>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu menu-horizontal px-1 text-[1rem]">
@@ -55,19 +60,21 @@ const Navbar = () => {
             </div>
             <div className="navbar-end gap-5">
                 {user ? <>
-                    <div className='w-14 h-14 border-2 border-orange-400 rounded-full p-[2px] dropdown dropdown-left dropdown-hover'>
-                        <img className='w-full h-full rounded-full' src={user.photoURL} alt="" />
+                    <div className='w-14 h-14 border-2 border-orange-400 rounded-full p-[2px] dropdown dropdown-left dropdown-hover z-30'>
+                        <img title={user.email} className='w-full h-full rounded-full' src={user.photoURL} alt="" />
 
                         <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a> My attempted assignments</a></li>
-  
+                            {/* this was big mistake */}
+                            {/* <Navbar to="/my_attempted_assignments">My attempted assignments</Navbar> */}
+                            <li><NavLink to="/my_attempted_assignments">My attempted assignments</NavLink></li>
                             <li><button onClick={handleLogOut} className=' bg-amber-400'>Logout</button></li>
-
                         </ul>
                     </div>
-                    <button onClick={handleLogOut} className='btn bg-amber-900 text-white'>Logout</button></> :
+                    {/* <button onClick={handleLogOut} className='btn bg-amber-900 text-white'>Logout</button> */}
+                </> :
                     <>
                         <NavLink to={'/login'}><button className='btn bg-amber-700 text-white font-bold '>Login</button></NavLink>
+                        <NavLink to={'/sign_up'}><button className='btn bg-amber-700 text-white font-bold '>Sign Up</button></NavLink>
                     </>}
 
             </div>

@@ -15,6 +15,10 @@ import CreateAssignments from './Pages/CreateAssignments';
 import PendingAssignments from './Pages/PendingAssignments';
 import Login from './Pages/Home/Login';
 import SignUp from './Pages/SignUp';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
+import UpdateAssignment from './Pages/UpdateAssignment';
+import MyAssignment from './Pages/MyAssignment';
+import AssignmentDeatils from './Pages/Home/AssignmentDeatils';
 
 const router = createBrowserRouter([
   {
@@ -38,12 +42,26 @@ const router = createBrowserRouter([
         element: <Assignments></Assignments>,
       },
       {
+        path: "/my_attempted_assignments",
+        element: <ProtectedRoute><MyAssignment></MyAssignment></ProtectedRoute>,
+      },
+      {
         path: "/create_assignments",
-        element: <CreateAssignments></CreateAssignments>,
+        element: <ProtectedRoute><CreateAssignments></CreateAssignments></ProtectedRoute>,
+      },
+      {
+        path: "/assignment_update/:id",
+        element: <ProtectedRoute><UpdateAssignment></UpdateAssignment></ProtectedRoute>,
+        loader: ({params})=> fetch(`http://localhost:5000/assignment_update/${params.id}`)
+      },
+      {
+        path: "/assignment_details/:id",
+        element: <ProtectedRoute><AssignmentDeatils></AssignmentDeatils></ProtectedRoute>,
+        loader: ({params})=> fetch(`http://localhost:5000/assignment_details/${params.id}`)
       },
       {
         path: "/pending_assignments",
-        element: <PendingAssignments></PendingAssignments>,
+        element: <ProtectedRoute><PendingAssignments></PendingAssignments></ProtectedRoute>,
       },
     ]
   },

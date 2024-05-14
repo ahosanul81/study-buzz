@@ -2,17 +2,17 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <div className='mt-16 bg-slate-100 p-12'>
+        <div className='mt-16 bg-slate-100 p-5 lg:p-12'>
             <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">How it works</p>
             <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Frequently Asked Questions</h2>
 
             <div className='flex justify-around items-center'>
 
-                <div className='w-2/5 ml-16'>
+                <div className='w-2/5 ml-16 hidden lg:block'>
                     <img  src="https://i.ibb.co/KWvQWMQ/images-3.jpg" alt="" />
                 </div>
 
-                <div className="join join-vertical w-3/5">
+                <div className="join join-vertical w-full lg:w-3/5">
                     <div className="collapse collapse-arrow join-item border border-base-300">
                         <input type="radio" name="my-accordion-4" defaultChecked />
                         <div className="collapse-title text-xl font-medium">

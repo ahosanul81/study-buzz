@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { GroupStudyContext } from '../../Context/GroupStudyProvider';
 import Swal from 'sweetalert2';
+import { axiosSecure } from '../../Hooks/useAxiosSecure';
 
 const Login = () => {
     const {loginUser} = useContext(GroupStudyContext)
@@ -19,9 +20,9 @@ const Login = () => {
         //  log in with email and pass
         loginUser(email, password)
             .then((result) => {
-                const user = result.user;
-                console.log(user);
-
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const user = {email}
                 Swal.fire({
                     position: "center",
                     icon: "success",
@@ -30,9 +31,14 @@ const Login = () => {
                     timer: 1000,
                 });
                 console.log('logged in successfully');
+                axiosSecure.post('/jwt', user)
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.success) {
+                        navigate(location?.state ? location?.state : '/')
+                    }
+                })
 
-              
-                navigate(location.state ? location.state : '/')
             })
 
             .catch((error) => {

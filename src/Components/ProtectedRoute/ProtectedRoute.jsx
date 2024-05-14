@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
     // console.log(location, 'protected');
     if (loading) {
         return <>
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center min-h-[calc(100vh-117px)]'>
                 <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-teal-600"></div>
             </div>
         </>

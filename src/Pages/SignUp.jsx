@@ -52,7 +52,7 @@ const SignUp = () => {
     return (
         <div className='container mx-auto flex justify-center '>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800 border border-amber-300">
-                <h1 className="text-2xl font-bold text-center">Login</h1>
+                <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form onSubmit={handleSignUp}  className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="text" className="block text-gray-600">Name</label>

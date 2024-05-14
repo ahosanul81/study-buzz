@@ -2,8 +2,11 @@ import React from 'react';
 
 const Footer = () => {
     return (
-   
-            <footer className="footer p-10 bg-neutral text-neutral-content mt-24">
+
+        <div className='bg-neutral
+        mt-24'>
+
+            <footer className="container mx-auto footer p-10  text-neutral-content grid grid-cols-3">
                 <nav>
                     <h6 className="footer-title">Services</h6>
                     <a className="link link-hover">Branding</a>
@@ -25,7 +28,9 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
             </footer>
-   
+        </div>
+
+
     );
 };
 
