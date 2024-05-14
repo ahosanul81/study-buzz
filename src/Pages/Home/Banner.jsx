@@ -8,7 +8,6 @@ const Banner = () => {
 
 
     return (<>
-
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar]}
                 spaceBetween={10}
@@ -32,8 +31,6 @@ const Banner = () => {
                     <img className='w-full h-52 lg:h-96 mx-auto' src="https://i.ibb.co/BTVSn3W/jason-goodman-vbxy-Fxlgpj-M-unsplash.jpg" alt="" />
                 </SwiperSlide>
             </Swiper>
-
-
     </>
 
 
