@@ -1,8 +1,7 @@
-import React, { useContext,  useState } from 'react';
+import  { useContext,  useState } from 'react';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import axios from 'axios';
 import Swal from 'sweetalert2';
 import { GroupStudyContext } from '../Context/GroupStudyProvider';
 import { axiosSecure } from '../Hooks/useAxiosSecure';

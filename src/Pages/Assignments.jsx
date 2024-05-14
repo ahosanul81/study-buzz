@@ -32,7 +32,6 @@ const Assignments = () => {
     useEffect(() => {
         axiosSecure(`/assignments?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => {
-                // console.log(res.data);
                 const {result, count} = res.data;
                 setCount(count)
                 setAssignments(result)
