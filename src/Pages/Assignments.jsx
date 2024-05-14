@@ -76,11 +76,15 @@ const Assignments = () => {
             });
         }
 
-        Swal.fire({
-            title: "Sorry!!",
-            text: "You are not creator of this assignment.",
-            icon: "error"
-        });
+        else{
+            Swal.fire({
+                title: "Sorry!!",
+                text: "You are not creator of this assignment.",
+                icon: "error"
+            });
+        }
+
+       
 
     }
 

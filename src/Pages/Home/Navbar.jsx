@@ -40,15 +40,16 @@ const Navbar = () => {
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-40 p-2 shadow bg-base-100 rounded-box w-52 text-[1rem]" >
                         {navLinks}
+                        <li><button onClick={handleLogOut} className=' bg-amber-400'>Logout</button></li>
                     </ul>
                 </div>
                 <Link to="/" className=''>
                     <div className='w-20 h-10 lg:w-24 lg:h-12 ml-4 rounded-full flex flex-row lg:flex-col justify-center items-center'>
 
                         <img className='w-full h-full ' src="https://i.ibb.co/3d2Br7z/study-buzz-logo-for-fav-Icon.png" alt="aaa" />
-                
-                            <h1 className='flex flex-row gap-1'><span className='font-bold'>Study</span> <span className='text-amber-600 font-bold'>Buzz</span></h1>
-                
+
+                        <h1 className='flex flex-row gap-1'><span className='font-bold'>Study</span> <span className='text-amber-600 font-bold'>Buzz</span></h1>
+
 
                     </div>
                 </Link>
@@ -60,16 +61,20 @@ const Navbar = () => {
             </div>
             <div className="navbar-end gap-5">
                 {user ? <>
-                    <div className='w-14 h-14 border-2 border-orange-400 rounded-full p-[2px] dropdown dropdown-left dropdown-hover z-30'>
-                        <img title={user.email} className='w-full h-full rounded-full' src={user.photoURL} alt="" />
+                    <div className=" dropdown dropdown-left dropdown-hover">
+                        <div tabIndex={0} className="w-14 h-14 border-2 border-orange-400 rounded-full p-[2px] ">
+                            <img title={user.email} className='w-full h-full rounded-full' src={user.photoURL} alt="" />
+                        </div>
 
-                        <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52">
-                            {/* this was big mistake */}
-                            {/* <Navbar to="/my_attempted_assignments">My attempted assignments</Navbar> */}
+                        <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-32 lg:w-52">
+
                             <li><NavLink to="/my_attempted_assignments">My attempted assignments</NavLink></li>
                             <li><button onClick={handleLogOut} className=' bg-amber-400'>Logout</button></li>
                         </ul>
                     </div>
+
+
+
                     {/* <button onClick={handleLogOut} className='btn bg-amber-900 text-white'>Logout</button> */}
                 </> :
                     <>

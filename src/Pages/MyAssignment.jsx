@@ -22,6 +22,7 @@ const MyAssignment = () => {
             .then(res => {
                 console.log(res.data);
                 setMyAssignment(res.data)
+               
             })
             .catch(error=>{
                 console.log('my assignment error', error);

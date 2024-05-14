@@ -2,7 +2,6 @@ import React from 'react';
 import Banner from './Banner';
 import Features from './Features';
 import Faq from './Faq';
-import Footer from './Footer';
 
 
 

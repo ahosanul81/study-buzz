@@ -22,6 +22,7 @@ const PendingAssignments = () => {
         const examinerFeedback = e.target.examinerFeedback.value
         console.log(obtainedMarks, examinerFeedback);
         const updateByExaminer = { obtainedMarks, examinerFeedback, statusComplete }
+        
         axiosSecure.patch(`/assignment_status/${id}`, updateByExaminer)
             .then(res => {
                 console.log(res.data);
@@ -32,6 +33,9 @@ const PendingAssignments = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+            })
+            .catch(error=>{
+                console.log('pending error' ,error.message);
             })
     }
 
@@ -54,7 +58,7 @@ const PendingAssignments = () => {
 
                         {
                             pendingAssignments.map(assignment => <>
-                                <tr>
+                                <tr key={assignment._id}>
                                     <td>
                                         <div className="flex items-center gap-3">
                                             <div className="avatar">

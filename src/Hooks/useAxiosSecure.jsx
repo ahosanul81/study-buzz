@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { GroupStudyContext } from '../Context/GroupStudyProvider';
 
 export const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://online-group-study-server-lac.vercel.app',
+    // baseURL: 'http://localhost:5000',
     withCredentials: true
 })
 const useAxiosSecure = () => {

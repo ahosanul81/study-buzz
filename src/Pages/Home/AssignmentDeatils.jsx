@@ -47,7 +47,7 @@ const AssignmentDeatils = () => {
         const takenAssignment = {takenAssId, fullName, email, title, difficultyLevel,marks, obtainedMarks, imageUrl, date, description, pdfLink, feedback, status }
         console.log(takenAssignment);
 
-        axiosSecure.post(`${import.meta.env.VITE_API_KEY}/assignments_taken`, takenAssignment)
+        axiosSecure.post(`/assignments_taken`, takenAssignment)
             .then(res => {
                 console.log(res.data);
                 Swal.fire({
