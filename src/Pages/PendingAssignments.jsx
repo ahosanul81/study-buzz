@@ -35,10 +35,6 @@ const PendingAssignments = () => {
             })
     }
 
-
-
-
-    
     return (
         <div>
 
