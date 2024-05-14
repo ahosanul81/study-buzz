@@ -13,7 +13,6 @@ const Features = () => {
             })
     }, [])
 
-
     return (
         <div className='mt-14'>
              <h1 className='text-4xl font-bold text-center mb-12'>Feature of our online study group</h1>
