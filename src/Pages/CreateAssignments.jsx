@@ -49,7 +49,6 @@ const CreateAssignments = () => {
                   if(res.data.acknowledged === true){
                     navigate('/assignments')
                   }
-              
             })
     }
 

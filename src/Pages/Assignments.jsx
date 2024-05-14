@@ -22,12 +22,12 @@ const Assignments = () => {
     const numberOfPages = Math.ceil(count / itemsPerPage);
 
     const pages = [...Array(numberOfPages).keys()]
-    // console.log(pages);
 
     const handleDifficultyLevel = (item) => {
         setDifficultyLevel(item)
         setDifficultyLevelOpen(false)
     }
+
 
     useEffect(() => {
         axiosSecure(`/assignments?page=${currentPage}&size=${itemsPerPage}`)
