@@ -42,7 +42,6 @@ const PendingAssignments = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-
                         <tr>
                             <th>Examinee Name</th>
                             <th>Assignment Title</th>
@@ -52,7 +51,6 @@ const PendingAssignments = () => {
                         </tr>
                     </thead>
                     <tbody>
-
 
                         {
                             pendingAssignments.map(assignment => <>
