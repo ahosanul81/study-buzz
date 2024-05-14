@@ -28,7 +28,6 @@ const Assignments = () => {
         setDifficultyLevelOpen(false)
     }
 
-
     useEffect(() => {
         axiosSecure(`/assignments?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => {
