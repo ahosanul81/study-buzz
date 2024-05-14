@@ -81,8 +81,6 @@ const AssignmentDeatils = () => {
                 </div>
             </div>
 
-
-           
             <button className="btn bg-gray-800 w-full text-white mt-9 hover:text-black" onClick={() => document.getElementById('my_modal_4').showModal()}>Take assignment</button>
 
             <dialog id="my_modal_4" className="modal">
