@@ -6,10 +6,10 @@ import Footer from '../Pages/Home/Footer';
 
 const Layout = () => {
     return (
-        <div className=''>
+        <div>
              {/* <div className='container mx-auto max-w-[95%]'></div> */}
             <Navbar></Navbar>
-            <div className='min-h-[calc(100vh-117px)]'>
+            <div className='min-h-[calc(100vh-117px)] container mx-auto '>
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>

@@ -10,8 +10,13 @@ import Faq from './Faq';
 const Home = () => {
     return (
         <div className='container mx-auto'>
-            <Banner></Banner>
+   
+                <Banner></Banner>
+    
+
+            <div className='max-w-[95%] mx-auto'>
             <Features></Features>
+            </div>
             <Faq></Faq>
         </div>
     );

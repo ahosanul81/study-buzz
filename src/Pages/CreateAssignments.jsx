@@ -53,7 +53,7 @@ const CreateAssignments = () => {
     }
 
     return (
-        <div>
+        <div className=' mt-9 max-w-[95%]'>
             <div>
                 <section className="p-6 bg-gray-100 text-gray-900">
                     <form onSubmit={handleCreateAssignment} noValidate="" action="" className="container flex flex-col mx-auto space-y-12">

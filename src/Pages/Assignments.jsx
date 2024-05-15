@@ -14,7 +14,7 @@ const Assignments = () => {
     const [difficultyLevelOpen, setDifficultyLevelOpen] = useState([])
     const [sortByDifficultyLevel, setSortByDifficultyLevel] = useState([])
     const [count, setCount] = useState([])
-    const [itemsPerPage, setItemsPerPage] = useState(5)
+    const [itemsPerPage, setItemsPerPage] = useState(6)
     // console.log('itemsPerPage', itemsPerPage);
     const [currentPage, setCurrentPage] = useState(0)
     // console.log('currentPage', currentPage);
@@ -90,7 +90,7 @@ const Assignments = () => {
 
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto mt-9 max-w-[95%]'>
             <div className='text-center'>
                 <div className="dropdown mb-10 text-center">
 
@@ -174,11 +174,11 @@ const Assignments = () => {
 
             <div className='text-center mt-10'>
             
-                <button className='btn bg-[#717b33] text-white mr-3'>Prev</button>
+                <button onClick={()=> setCurrentPage(currentPage > 0 && currentPage - 1)} className='btn bg-[#717b33] text-white mr-3'>Prev</button>
                 {
                     pages.map(page=> <button  onClick={()=> setCurrentPage(page)} key={page} className={`${currentPage === page ? 'btn bg-orange-400 text-white mr-3' : 'btn bg-gray-800 text-white mr-3'}`}>{page}</button>)
                 }
-                <button className='btn bg-[#717b33] text-white'>Next</button>
+                <button onClick={()=> setCurrentPage(currentPage < pages.length && currentPage + 1)} className='btn bg-[#717b33] text-white'>Next</button>
                 <select onChange={(e)=> {setItemsPerPage(parseInt(e.target.value)); setCurrentPage(0)}} defaultValue={itemsPerPage} className='ml-3 border border-orange-600 py-2 px-1 rounded-md'>
                     <option value="2">2</option>
                     <option value="5">5</option>

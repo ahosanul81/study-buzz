@@ -34,7 +34,7 @@ const MyAssignment = () => {
     }, [user.email, logOutUser, navigate])
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto mt-9 max-w-[95%]'>
 
             <div className="overflow-x-auto">
                 <table className="table">

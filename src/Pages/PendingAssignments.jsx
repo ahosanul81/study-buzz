@@ -40,9 +40,9 @@ const PendingAssignments = () => {
     }
 
     return (
-        <div>
+        <div className=' mt-9'>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto ">
                 <table className="table">
                     {/* head */}
                     <thead>

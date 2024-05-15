@@ -62,7 +62,7 @@ const AssignmentDeatils = () => {
     }
 
     return (
-        <div className='container mx-auto '>
+        <div className='container mx-auto mt-9 max-w-[95%]'>
             <h1 className='text-4xl font-bold text-center mb-8'>Assignment details</h1>
             <div className=' flex flex-col lg:flex-row justify-evenly items-center gap-4'>
                 <div className='w-full p-3 lg:w-4/12 h-72 flex flex-col justify-center space-y-6 bg-[#ADEFD1FF] '>
